@@ -47,6 +47,6 @@ source ~/.reg-env/bin/activate
     - `Utility-functions`: [util.py](./util.py)
     - `Test Code`: [tests.py](./tests.py)
 
-- Run make all which will `install`, `lint` and `test` the code.
+- Run `make all` which will `install`, `lint` and `test` the code.
 - Now the configuration for Github Actions is set up as [aws-ml-app.yml](.github/workflow/aws-ml-app.yml)
 

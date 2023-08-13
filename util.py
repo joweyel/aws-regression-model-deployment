@@ -14,7 +14,7 @@ def get_data(train_split=0.7, N=150, m=0.71, b=0.2, std=1.0):
     y = func(x, m, b) + np.random.normal(size=x.shape[0], scale=std)
 
     # shuffle the data
-    idx = np.random.choice(np.arange(N), size=N)
+    idx = np.random.choice(np.arange(N), size=N, replace=False)
     x_ = x[idx]
     y_ = y[idx]
 
