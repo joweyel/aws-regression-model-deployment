@@ -50,3 +50,32 @@ source ~/.reg-env/bin/activate
 - Run `make all` which will `install`, `lint` and `test` the code.
 - Now the configuration for Github Actions is set up as [aws-ml-app.yml](.github/workflow/aws-ml-app.yml)
 
+```yml
+name: Python ML-Application test with Github Actions
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint with pylint
+      run: |
+        make lint
+    - name: Test with pytest
+      run: |
+        make test
+```
+
+- Now the code can be pushed to Github to trigger the Github Actions workflows
+- **`TODO`**: further deployment steps
